@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login to AWS Test</title>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.33.1.js"></script>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.33.1.min.js"></script>
+    <script src="static/js/main.js"></script>
+</head>
+<body>
+<h2>Login access to Tadas AWS Test</h2>
+{% if not session.logged_in %}
+<a href="/facebook_login">Login with Facebook</a>
+{% for message in get_flashed_messages() %}
+    {{message}}
+{% endfor %}
+{% else %}
+<a href="/main"></a>
+{% endif %}
+
+</body>
+</html>
